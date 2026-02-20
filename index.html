@@ -298,7 +298,7 @@ nav.scrolled .nav-links a:hover { color: #175cd3; }
 /* ─── Metrics Grid ─── */
 .metrics-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 60px;
 }
@@ -535,45 +535,77 @@ nav.scrolled .nav-links a:hover { color: #175cd3; }
   line-height: 1.4;
 }
 
-/* ─── Why Endeavor ─── */
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+/* ─── Security & Compliance ─── */
+.compliance-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
   margin-top: 48px;
 }
-.why-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 20px;
-  padding: 40px;
-  transition: all 0.3s ease;
-}
-.why-card:hover {
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(99,102,241,0.2);
-}
-.why-card .why-icon {
-  width: 56px;
-  height: 56px;
+.compliance-badge {
+  background: #fff;
+  border: 1px solid #e5e7eb;
   border-radius: 16px;
-  background: rgba(99,102,241,0.1);
+  padding: 24px 32px;
+  text-align: center;
+  transition: all 0.3s ease;
+  min-width: 160px;
+}
+.compliance-badge:hover {
+  border-color: #175cd3;
+  box-shadow: 0 8px 30px rgba(23,92,211,0.06);
+  transform: translateY(-3px);
+}
+.compliance-badge .badge-icon {
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+}
+.compliance-badge .badge-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+.compliance-badge .badge-detail {
+  font-size: 0.72rem;
+  color: #9ca3af;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* ─── Why Endeavor ─── */
+.why-bullets {
+  max-width: 700px;
+  margin: 40px auto 0;
+}
+.why-bullet {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.why-bullet:last-child { border-bottom: none; }
+.why-bullet-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(99,102,241,0.12);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-}
-.why-card h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #fff;
-}
-.why-card p {
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.7;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.why-bullet p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+}
+.why-bullet strong {
+  color: #fff;
 }
 
 /* ─── CTA Section ─── */
@@ -701,7 +733,7 @@ footer p {
 
 /* ─── Responsive ─── */
 @media (max-width: 1024px) {
-  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+  .metrics-grid { grid-template-columns: repeat(3, 1fr); }
   .products-grid { grid-template-columns: 1fr; }
   .product-card.featured { grid-column: span 1; }
   .global-grid { grid-template-columns: repeat(2, 1fr); }
@@ -712,7 +744,7 @@ footer p {
   .section { padding: 64px 0; }
   .container { padding: 0 20px; }
   .hero-metrics { gap: 32px; }
-  .metrics-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .metrics-grid { grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
   .global-grid { grid-template-columns: 1fr; }
   .partners-grid { grid-template-columns: repeat(2, 1fr); }
   .why-grid { grid-template-columns: 1fr; }
@@ -733,6 +765,7 @@ footer p {
       <li><a href="#traction">Traction</a></li>
       <li><a href="#founder">Founder</a></li>
       <li><a href="#products">Products</a></li>
+      <li><a href="#security">Compliance</a></li>
       <li><a href="#global">Global</a></li>
       <li><a href="#partners">Partners</a></li>
       <li><a href="#why">Why Endeavor</a></li>
@@ -748,8 +781,8 @@ footer p {
         <span class="dot"></span>
         Endeavor Application 2026
       </div>
-      <h1>All-in-one <span>spend management</span> for scaling businesses worldwide</h1>
-      <p class="hero-sub">SaaS optimization, corporate cards, cloud cost management, chargeback prevention and LLM Gateway — built from Ukraine, serving 42+ countries.</p>
+      <h1><span>Cloud, AI & spend management</span> platform for scaling businesses</h1>
+      <p class="hero-sub">Cloud cost optimization, LLM API gateway, SaaS management, corporate cards and chargeback prevention — built from Ukraine, serving 1,000+ clients across 42+ countries.</p>
       <div class="hero-metrics">
         <div class="hero-metric">
           <div class="number">$42M+</div>
@@ -763,10 +796,6 @@ footer p {
           <div class="number">$1.5M</div>
           <div class="desc">Total Capital Raised</div>
         </div>
-        <div class="hero-metric">
-          <div class="number">189+</div>
-          <div class="desc">Team Members</div>
-        </div>
       </div>
     </div>
   </div>
@@ -777,8 +806,8 @@ footer p {
   <div class="container">
     <div class="text-center fade-up">
       <span class="label label-dark">Key Metrics</span>
-      <h2 style="color:#fff">Extraordinary capital efficiency</h2>
-      <p class="text-white-muted" style="max-width:600px;margin:0 auto;">From $0 to $42M+ ARR with only $1.5M raised. Bootstrapped to $2M ARR before accepting a single dollar of outside capital.</p>
+      <h2 style="color:#fff">Traction & unit economics</h2>
+      <p class="text-white-muted" style="max-width:600px;margin:0 auto;">Serving 1,000+ clients globally with strong retention and efficient go-to-market. Bootstrapped to $2M ARR before accepting outside capital.</p>
     </div>
     <div class="metrics-grid">
       <div class="metric-card fade-up stagger-1">
@@ -786,30 +815,22 @@ footer p {
         <div class="metric-label">Monthly Gross Revenue<br>(Jan 2026)</div>
       </div>
       <div class="metric-card fade-up stagger-2">
-        <div class="value">482%</div>
-        <div class="metric-label">Year-over-Year<br>Growth Rate</div>
-      </div>
-      <div class="metric-card fade-up stagger-3">
-        <div class="value">$582K</div>
-        <div class="metric-label">Monthly Net<br>Revenue</div>
-      </div>
-      <div class="metric-card fade-up stagger-4">
         <div class="value">7 mo.</div>
         <div class="metric-label">Consecutive Months<br>EBITDA-Positive</div>
       </div>
-      <div class="metric-card fade-up stagger-5">
+      <div class="metric-card fade-up stagger-3">
+        <div class="value">1,000+</div>
+        <div class="metric-label">Clients Across<br>42+ Countries</div>
+      </div>
+      <div class="metric-card fade-up stagger-4">
         <div class="value">11.3x</div>
         <div class="metric-label">Lifetime Value<br>to CAC Ratio</div>
       </div>
-      <div class="metric-card fade-up stagger-6">
-        <div class="value">3 mo.</div>
-        <div class="metric-label">Customer<br>Payback Period</div>
-      </div>
-      <div class="metric-card fade-up stagger-7">
+      <div class="metric-card fade-up stagger-5">
         <div class="value">176%</div>
         <div class="metric-label">Net Dollar<br>Retention</div>
       </div>
-      <div class="metric-card fade-up stagger-8">
+      <div class="metric-card fade-up stagger-6">
         <div class="value">99%</div>
         <div class="metric-label">Logo<br>Retention Rate</div>
       </div>
@@ -822,8 +843,8 @@ footer p {
   <div class="container">
     <div class="text-center fade-up">
       <span class="label label-blue">Revenue Trajectory</span>
-      <h2>From zero to $42M ARR</h2>
-      <p class="text-muted" style="max-width:550px;margin:0 auto;">An exceptional revenue-to-funding ratio of 42:1 — among the most capital-efficient fintech companies globally.</p>
+      <h2>Revenue growth timeline</h2>
+      <p class="text-muted" style="max-width:550px;margin:0 auto;">A 42:1 revenue-to-funding ratio — among the most capital-efficient fintech companies globally.</p>
     </div>
     <div class="journey-track fade-up">
       <div class="journey-node">
@@ -855,57 +876,50 @@ footer p {
   <div class="container">
     <div class="text-center fade-up" style="margin-bottom:60px;">
       <span class="label label-blue">The Founder</span>
-      <h2>Andrii Aleksieienko (Andrew Alex)</h2>
-      <p class="text-muted">CEO & Sole Founder — Ukrainian-born, building a global fintech from a war-affected country</p>
+      <h2>Andrii Aleksieienko</h2>
+      <p class="text-muted">CEO & Sole Founder — Ukrainian-born, building a global fintech across 8+ jurisdictions</p>
     </div>
     <div class="founder-grid">
       <div class="founder-visual fade-up">
         <div class="founder-card">
           <div class="founder-initials">AA</div>
-          <div class="founder-name">Andrew Alex</div>
+          <div class="founder-name">Andrii Aleksieienko</div>
           <div class="founder-title">CEO & Sole Founder, Spendbase</div>
           <div class="founder-badges">
             <span class="badge">100% Ownership</span>
             <span class="badge">Solo Founder</span>
-            <span class="badge">Startup World Cup Winner</span>
             <span class="badge">Ukrainian-born</span>
+            <span class="badge">Remote-first</span>
           </div>
         </div>
       </div>
       <div class="founder-highlights fade-up stagger-2">
         <div class="highlight-item">
-          <div class="highlight-icon">&#127942;</div>
-          <div class="highlight-text">
-            <h4>Startup World Cup Champion</h4>
-            <p>Won the global competition in October 2024, competing against thousands of startups worldwide.</p>
-          </div>
-        </div>
-        <div class="highlight-item">
           <div class="highlight-icon">&#128176;</div>
           <div class="highlight-text">
             <h4>Bootstrapped to $2M ARR</h4>
-            <p>Built Spendbase to $2M ARR before accepting his first dollar of outside capital. Chose profitability over dilution.</p>
+            <p>Built Spendbase to $2M ARR before accepting outside capital. Chose profitability over dilution from day one.</p>
           </div>
         </div>
         <div class="highlight-item">
           <div class="highlight-icon">&#127758;</div>
           <div class="highlight-text">
-            <h4>Global Operations from Day One</h4>
-            <p>Operating from SF, London, Dubai, and Warsaw. Personally negotiates with Mastercard VPs, OpenAI directors, and top-tier growth equity firms.</p>
+            <h4>Global operations across 4 continents</h4>
+            <p>Operating from San Francisco, London, Dubai, and Warsaw with direct relationships across Mastercard, OpenAI, AWS, and leading growth equity firms.</p>
           </div>
         </div>
         <div class="highlight-item">
           <div class="highlight-icon">&#9889;</div>
           <div class="highlight-text">
-            <h4>5 Product Lines, 10+ Entities</h4>
-            <p>Solo founder managing 189 employees, 5 products, 10+ legal entities, and M&A across 6 countries simultaneously.</p>
+            <h4>5 product lines, 10+ legal entities</h4>
+            <p>Managing 189 employees, 5 revenue lines, 10+ entities, and an active M&A pipeline across 6 countries — as a solo founder.</p>
           </div>
         </div>
         <div class="highlight-item">
-          <div class="highlight-icon">&#127467;&#127462;</div>
+          <div class="highlight-icon">&#128200;</div>
           <div class="highlight-text">
-            <h4>42:1 Revenue-to-Funding Ratio</h4>
-            <p>Raised only $1.5M total (two SAFE notes) while reaching $42M+ ARR — extraordinary capital efficiency during wartime.</p>
+            <h4>42:1 revenue-to-funding ratio</h4>
+            <p>Raised $1.5M total (two SAFE notes) while scaling to $42M+ ARR — demonstrating exceptional capital discipline.</p>
           </div>
         </div>
       </div>
@@ -917,38 +931,49 @@ footer p {
 <section class="section" id="products">
   <div class="container">
     <div class="text-center fade-up">
-      <span class="label label-blue">5 Revenue Lines</span>
-      <h2>A diversified product ecosystem</h2>
-      <p class="text-muted" style="max-width:550px;margin:0 auto;">Five complementary products creating deep vendor lock-in and exceptional net dollar retention.</p>
+      <span class="label label-blue">Product Ecosystem</span>
+      <h2>Five complementary revenue lines</h2>
+      <p class="text-muted" style="max-width:550px;margin:0 auto;">A diversified platform serving 1,000+ clients with deep product integration and 176% net dollar retention.</p>
     </div>
     <div class="products-grid">
       <div class="product-card featured fade-up stagger-1">
         <div class="product-icon icon-blue">&#9729;&#65039;</div>
-        <div class="product-name">Cloud Credits Program</div>
-        <div class="product-desc">AWS credits brokerage serving 570 AWS clients. Dominant growth driver generating 72.8% of gross revenue. Up to $100K in credits per startup.</div>
+        <div class="product-name">Cloud Cost Management</div>
+        <div class="product-desc">Proprietary cloud optimization platform and AWS partnership serving 570+ clients. Primary growth engine driving the majority of revenue with a 25% margin on managed spend above $2K/month.</div>
         <div class="product-stats">
           <div>
             <div class="product-stat-value" style="color:#60a5fa;">72.8%</div>
             <div class="product-stat-label">of Gross Revenue</div>
           </div>
           <div>
-            <div class="product-stat-value" style="color:#60a5fa;">570</div>
-            <div class="product-stat-label">AWS Clients</div>
-          </div>
-          <div>
-            <div class="product-stat-value" style="color:#60a5fa;">$100K</div>
-            <div class="product-stat-label">Max Credits/Startup</div>
+            <div class="product-stat-value" style="color:#60a5fa;">570+</div>
+            <div class="product-stat-label">Cloud Clients</div>
           </div>
         </div>
       </div>
       <div class="product-card fade-up stagger-2">
+        <div class="product-icon icon-pink">&#129302;</div>
+        <div class="product-name">LLM API Gateway</div>
+        <div class="product-desc">Unified access to 100+ LLM models with direct partnerships with OpenAI and xAI. Dedicated 7-person engineering team.</div>
+        <div class="product-stats">
+          <div>
+            <div class="product-stat-value">100+</div>
+            <div class="product-stat-label">LLM Models</div>
+          </div>
+          <div>
+            <div class="product-stat-value">OpenAI</div>
+            <div class="product-stat-label">Direct Partner</div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card fade-up stagger-3">
         <div class="product-icon icon-purple">&#128187;</div>
         <div class="product-name">Spendbase Platform</div>
-        <div class="product-desc">Core SaaS management, vendor negotiation, and procurement optimization. Clients save 20-35% on software spend.</div>
+        <div class="product-desc">SaaS management, vendor negotiation, and procurement optimization. Clients save 20-35% on software spend.</div>
         <div class="product-stats">
           <div>
             <div class="product-stat-value">20-35%</div>
-            <div class="product-stat-label">Savings</div>
+            <div class="product-stat-label">Client Savings</div>
           </div>
           <div>
             <div class="product-stat-value">$5-40K</div>
@@ -956,42 +981,65 @@ footer p {
           </div>
         </div>
       </div>
-      <div class="product-card fade-up stagger-3">
+      <div class="product-card fade-up stagger-4">
         <div class="product-icon icon-green">&#128179;</div>
         <div class="product-name">Corporate Cards & Banking</div>
-        <div class="product-desc">Virtual and physical Mastercard cards across EU/UK, USA, and Canada. PCI DSS Level 1 v4.0 certified. Own EMI license in progress.</div>
+        <div class="product-desc">Virtual and physical Mastercard cards across EU/UK, USA, and Canada. US card program launching Q1-Q2 2026 via Sutton Bank. Own EMI license in progress.</div>
         <div class="product-stats">
           <div>
             <div class="product-stat-value">4</div>
             <div class="product-stat-label">Geographies</div>
           </div>
-          <div>
-            <div class="product-stat-value">L1</div>
-            <div class="product-stat-label">PCI DSS</div>
-          </div>
-        </div>
-      </div>
-      <div class="product-card fade-up stagger-4">
-        <div class="product-icon icon-orange">&#128737;&#65039;</div>
-        <div class="product-name">Chargebase</div>
-        <div class="product-desc">Chargeback prevention via Ethoca (Mastercard) + Verifi (Visa) reselling. Team of 10 with a goal to become #1 Ethoca partner globally.</div>
-        <div class="product-stats">
-          <div>
-            <div class="product-stat-value">$172K+</div>
-            <div class="product-stat-label">Gross Revenue</div>
-          </div>
         </div>
       </div>
       <div class="product-card fade-up stagger-5">
-        <div class="product-icon icon-pink">&#129302;</div>
-        <div class="product-name">LLM API Gateway</div>
-        <div class="product-desc">Unified access to 100+ LLM models. Direct partnerships with OpenAI and xAI. 7-person dev team. OpenRouter competitor.</div>
+        <div class="product-icon icon-orange">&#128737;&#65039;</div>
+        <div class="product-name">Chargebase</div>
+        <div class="product-desc">Chargeback prevention via Ethoca (Mastercard) and Verifi (Visa) reselling. Dedicated team of 10 with a goal to become the #1 Ethoca partner globally.</div>
         <div class="product-stats">
           <div>
-            <div class="product-stat-value">100+</div>
-            <div class="product-stat-label">LLM Models</div>
+            <div class="product-stat-value">10</div>
+            <div class="product-stat-label">Team Members</div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Security & Compliance ─── -->
+<section class="section section-light" id="security">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="label label-blue">Security & Compliance</span>
+      <h2>Enterprise-grade compliance</h2>
+      <p class="text-muted" style="max-width:550px;margin:0 auto;">Built with security-first architecture and certified across all major regulatory frameworks.</p>
+    </div>
+    <div class="compliance-grid">
+      <div class="compliance-badge fade-up stagger-1">
+        <div class="badge-icon">&#128274;</div>
+        <div class="badge-name">PCI DSS</div>
+        <div class="badge-detail">Level 1 v4.0 Certified</div>
+      </div>
+      <div class="compliance-badge fade-up stagger-2">
+        <div class="badge-icon">&#127466;&#127482;</div>
+        <div class="badge-name">GDPR</div>
+        <div class="badge-detail">Fully Compliant</div>
+      </div>
+      <div class="compliance-badge fade-up stagger-3">
+        <div class="badge-icon">&#128179;</div>
+        <div class="badge-name">EMI License</div>
+        <div class="badge-detail">Bank of Lithuania<br>(In Progress)</div>
+      </div>
+      <div class="compliance-badge fade-up stagger-4">
+        <div class="badge-icon">&#127464;&#127462;</div>
+        <div class="badge-name">FINTRAC</div>
+        <div class="badge-detail">MSB Licensed &<br>Registered (Canada)</div>
+      </div>
+      <div class="compliance-badge fade-up stagger-5">
+        <div class="badge-icon">&#128737;&#65039;</div>
+        <div class="badge-name">SOC 2</div>
+        <div class="badge-detail">Type II</div>
       </div>
     </div>
   </div>
@@ -1003,7 +1051,7 @@ footer p {
     <div class="text-center fade-up">
       <span class="label label-dark">Global Presence</span>
       <h2 style="color:#fff;">10+ entities across 8+ jurisdictions</h2>
-      <p class="text-white-muted" style="max-width:550px;margin:0 auto;">310+ active clients across 42+ countries with localized operations and banking on every major continent.</p>
+      <p class="text-white-muted" style="max-width:550px;margin:0 auto;">1,000+ clients across 42+ countries with localized operations and banking on every major continent.</p>
     </div>
     <div class="global-grid">
       <div class="region-card fade-up stagger-1">
@@ -1132,29 +1180,24 @@ footer p {
   <div class="container">
     <div class="text-center fade-up">
       <span class="label label-dark">The Case for Endeavor</span>
-      <h2 style="color:#fff;">Why Spendbase belongs in the Endeavor network</h2>
-      <p class="text-white-muted" style="max-width:650px;margin:0 auto;">Andrew Alex represents the archetype Endeavor was built for: a high-impact entrepreneur from an underrepresented market, building a global category leader with extraordinary capital efficiency.</p>
+      <h2 style="color:#fff;">Why Spendbase</h2>
     </div>
-    <div class="why-grid">
-      <div class="why-card fade-up stagger-1">
-        <div class="why-icon">&#127482;&#127462;</div>
-        <h3>From Ukraine, During Wartime</h3>
-        <p>Built a $42M+ ARR business across 8 jurisdictions while operating from a war-affected country. Demonstrates extraordinary resilience and determination.</p>
+    <div class="why-bullets fade-up stagger-1">
+      <div class="why-bullet">
+        <div class="why-bullet-icon">&#127482;&#127462;</div>
+        <p><strong>Ukrainian founder building globally during wartime</strong> — operating across 8+ jurisdictions with 1,000+ clients in 42+ countries</p>
       </div>
-      <div class="why-card fade-up stagger-2">
-        <div class="why-icon">&#128200;</div>
-        <h3>42:1 Revenue-to-Funding Ratio</h3>
-        <p>Among the most capital-efficient fintech companies globally. $42M+ ARR on just $1.5M raised — while maintaining profitability for 7 consecutive months.</p>
+      <div class="why-bullet">
+        <div class="why-bullet-icon">&#128200;</div>
+        <p><strong>42:1 revenue-to-funding ratio</strong> — among the most capital-efficient fintech companies globally, EBITDA-positive for 7 consecutive months</p>
       </div>
-      <div class="why-card fade-up stagger-3">
-        <div class="why-icon">&#128640;</div>
-        <h3>482% YoY Growth with Profitability</h3>
-        <p>Hypergrowth without burning cash. EBITDA-positive since May 2025 while simultaneously scaling across multiple product lines and geographies.</p>
+      <div class="why-bullet">
+        <div class="why-bullet-icon">&#128640;</div>
+        <p><strong>Hypergrowth with profitability</strong> — scaling across 5 product lines and 10+ entities while maintaining disciplined unit economics</p>
       </div>
-      <div class="why-card fade-up stagger-4">
-        <div class="why-icon">&#127757;</div>
-        <h3>Endeavor Network Acceleration</h3>
-        <p>The network would accelerate Spendbase's path from $50M to $100M ARR through mentorship and connections — particularly in US, LATAM, and APAC where Endeavor is strongest.</p>
+      <div class="why-bullet">
+        <div class="why-bullet-icon">&#127757;</div>
+        <p><strong>Endeavor network as a growth accelerator</strong> — mentorship and connectivity in US, LATAM, and APAC markets to support the next phase of expansion</p>
       </div>
     </div>
   </div>
@@ -1163,8 +1206,8 @@ footer p {
 <!-- ─── CTA ─── -->
 <section class="cta-section">
   <div class="container">
-    <h2>Ready to transform spend management globally</h2>
-    <p>Solo founder. Bootstrapped. Profitable. From $0 to $42M+ ARR with extraordinary capital efficiency.</p>
+    <h2>Building the future of cloud, AI & spend management</h2>
+    <p>Bootstrapped. Profitable. Serving 1,000+ clients across 42+ countries with five product lines and growing.</p>
     <a href="https://www.spendbase.co" class="btn-cta" target="_blank">
       Visit Spendbase
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
